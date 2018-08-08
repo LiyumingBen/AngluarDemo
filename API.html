@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+<!--<h1>angular lowercase</h1>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p>{{ x1 }}</p>
+    <p>{{ x2 }}</p>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.x1 = "JOHN";
+        $scope.x2 = angular.$$lowercase($scope.x1);
+    });
+</script>-->
+
+<!--<h1>angular uppercase</h1>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p>{{ x1 }}</p>
+    <p>{{ x2 }}</p>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.x1 = "John";
+        $scope.x2 = angular.$$uppercase($scope.x1);
+    });
+</script>-->
+
+<!--<h1>angular isString</h1>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p>{{ x1 }}</p>
+    <p>{{ x2 }}</p>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.x1 = "JOHN";
+        $scope.x2 = angular.isString($scope.x1);
+    });
+</script>-->
+
+<!--<h1>angular isNumber</h1>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p>{{ x1 }}</p>
+    <p>{{ x2 }}</p>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.x1 = "JOHN";
+        $scope.x2 = angular.isNumber($scope.x1);
+    });
+</script>-->
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <input type="text" ng-model="myInput" ng-blur="blur()">
+    <p>输入的内容为：{{myInput}}</p>
+    <p>变成小写：{{ x1 }}</p>
+    <p>变成大写：{{ x2 }}</p>
+    <p ng-switch = "x3">
+        是不是字符串：
+        <label ng-switch-when = "true">是</label>
+        <label ng-switch-when = "false">不是</label>
+        <label ng-switch-when = ""></label>
+    </p>
+    <p ng-switch = "x4">
+        是不是数字：
+        <label ng-switch-when = "true">是</label>
+        <label ng-switch-when = "false">不是</label>
+        <label ng-switch-when = ""></label>
+    </p>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.blur = function(){
+            $scope.x1 = angular.$$lowercase($scope.myInput);
+            $scope.x2 = angular.$$uppercase($scope.myInput);
+            $scope.x3 = angular.isString($scope.myInput);
+            // angular.isNumber 这里无效
+            // $scope.x4 = angular.isNumber($scope.myInput);
+            $scope.x4 = !isNaN($scope.myInput);
+        }
+    });
+</script>
+</body>
+</html>

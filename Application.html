@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+</head>
+<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
+
+<h2>我的笔记</h2>
+
+
+<textarea ng-model="message" cols="40" rows="20" class="form-control"></textarea>
+
+<p>
+    <button ng-click="save()" class="btn btn-success">保存</button>
+    <button ng-click="clear()" class="btn btn-danger">清除</button>
+</p>
+
+<p>剩余字数: <span ng-bind="left()"></span></p>
+
+<script src="js/myNoteApp.js"></script>
+<script src="controller/myNoteCtrl.js"></script>
+</body>
+</html>

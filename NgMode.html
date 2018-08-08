@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/angular.min.js"></script>
+    <style>
+        input.ng-invalid {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<!--<h1>ng-model 指令</h1>
+<div ng-app="myApp" ng-controller="myCtrl">
+    名字: <input ng-model="name">
+</div>-->
+<!--<h1>双向绑定</h1>
+<div ng-app="myApp" ng-controller="myCtrl">
+    名字: <input ng-model="name">
+    <h1>你输入了: {{name}}</h1>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.name = "John Doe";
+    });
+</script>-->
+
+<!--<h1>验证用户输入</h1>
+<form ng-app="" name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email" style="color: #ff1f31">不是一个合法的邮箱地址</span>
+</form>-->
+<!--<h1>应用状态</h1>
+<form ng-app="" name="myForm" ng-init="myText = 'test@runoob.com'">
+
+    Email:
+    <input type="email" name="myAddress" ng-model="myText" required>
+    <p>编辑邮箱地址，查看状态的改变。</p>
+    <h1>状态</h1>
+    <p>Valid: {{myForm.myAddress.$valid}} (如果输入的值是合法的则为 true)。</p>
+    <p>Dirty: {{myForm.myAddress.$dirty}} (如果值改变则为 true)。</p>
+    <p>Touched: {{myForm.myAddress.$touched}} (如果通过触屏点击则为 true)。</p>
+
+</form>-->
+
+
+<form ng-app="" name="myForm">
+    输入你的名字:
+    <input name="myName" ng-model="myText" required>
+</form>
+
+<p>编辑文本域，不同状态背景颜色会发生变化。</p>
+<p>文本域添加了 required 属性，该值是必须的，如果为空则是不合法的。</p>
+</body>
+</html>
+
+<!--
+ng-valid: 验证通过
+ng-invalid: 验证失败
+ng-valid-[key]: 由$setValidity添加的所有验证通过的值
+ng-invalid-[key]: 由$setValidity添加的所有验证失败的值
+ng-pristine: 控件为初始状态
+ng-dirty: 控件输入值已变更
+ng-touched: 控件已失去焦点
+ng-untouched: 控件未失去焦点
+ng-pending: 任何为满足$asyncValidators的情况
+-->

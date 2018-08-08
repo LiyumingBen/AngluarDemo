@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-app="" ng-init="firstName='John'">
+
+   <!-- <p>在输入框中尝试输入:</p>
+    <p>姓名: <input type="text" ng-model="firstName"></p>
+    <p>你输入的为: {{ firstName }}</p>-->
+
+
+    <!--<h2>数据绑定</h2>
+    <div ng-app="" ng-init="quantity=1;price=5">
+
+        <h2>价格计算器</h2>
+
+        数量： <input type="number" ng-model="quantity">
+        价格： <input type="number" ng-model="price">
+
+        <p><b>总价：</b> {{ quantity * price }}</p>
+
+    </div>-->
+    <!--<h1>重复 HTML 元素</h1>
+    <div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+        <p>使用 ng-repeat 来循环数组</p>
+        <ul>
+            <li ng-repeat="x in names">
+                {{ x }}
+            </li>
+        </ul>
+    </div>-->
+
+    <h1>创建自定义的指令</h1>
+</div>
+
+<!--元素-->
+<!--<runoob-directive></runoob-directive>-->
+<!--属性-->
+<!--<div runoob-directive></div>-->
+<!--类名 必须设置restrict : "C",-->
+<!--注释-->
+<!-- directive: runoob-directive -->
+<p><strong>注意：</strong> 我们需要在该实例添加 <strong>replace</strong> 属性， 否则评论是不可见的。</p>
+
+<p><strong>注意：</strong> 你必须设置 <b>restrict</b> 的值为 "M" 才能通过注释来调用指令。</p>
+
+<div class="runoob-directive"></div>
+<script>
+    var app = angular.module("myApp", []);
+    app.directive("runoobDirective", function() {
+        return {
+            restrict : "M",
+            replace : true,
+            template : "<h1>我是被创建的自定义指令!</h1>"
+        };
+    });
+</script>
+</body>
+</html>
+
+<!--
+   ng-app: 告诉angularJs, <div> 元素是 AngularJS 应用程序 的"所有者"。
+   ng-init: 初始化变量
+   ng-repeat: 重复一个HTML元素, 即实现数组遍历
+   ng-model: 绑定数据在控件上面
+-->
